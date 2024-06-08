@@ -44,9 +44,13 @@ ListNode reverseForWhile(ListNode head) {
     ListNode prev = null, node = head;
 
     while (node != null) {
+        // 이동할 곳을 미리 선언 (연결이 끊길 것이기 때문)
         ListNode next = node.next;
+        // 역순을 가리키도록 방향 수정, node 의 연결을 끊고, 새로 연결을 생성
         node.next = prev;
+        // 새로 생성한 연결을 가리킴
         prev = node;
+        // 리스트를 마저 순회함. 다만, node.next 는 더이상 기존 리스트의 next 를 가리키고 있지 않기에 미리 기록해둔 곳으로 감.
         node = next;
     }
     

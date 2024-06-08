@@ -34,12 +34,25 @@ public class TwoSum {
         return null;
     }
 
+    static int[] twoSumByMapAdvanced(int[] nums, int target) {
+        Map<Integer, Integer> numsIndexMap = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (numsIndexMap.containsKey(target - nums[i]) && i != numsIndexMap.get(target - nums[i]))
+                return new int[]{i, numsIndexMap.get(target - nums[i])};
+            numsIndexMap.put(nums[i], i);
+        }
+
+        return null;
+    }
+
     public static void main(String[] args) {
         int[] nums = {2, 6, 11, 15};
         int target = 8;
 
 //        int[] result = twoSumByBruteForce(nums, target);
-        int[] result = twoSumByMap(nums, target);
+//        int[] result = twoSumByMap(nums, target);
+        int[] result = twoSumByMapAdvanced(nums, target);
         System.out.println("result = " + Arrays.toString(result));
     }
 }

@@ -1,4 +1,4 @@
-package linear_data_structure.array;
+package linear_data_structure.array.two_sum;
 
 import java.util.Arrays;
 import java.util.HashMap;

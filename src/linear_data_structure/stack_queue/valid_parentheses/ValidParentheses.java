@@ -19,7 +19,7 @@ public class ValidParentheses {
             if (!table.containsKey(s.charAt(i))) stack.push(s.charAt(i));
             else if (stack.isEmpty() || table.get(s.charAt(i)) != stack.pop()) return false;
         }
-        return true;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {

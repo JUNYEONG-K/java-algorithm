@@ -57,7 +57,11 @@ boolean isValid(String s) {
         if (!table.containsKey(s.charAt(i))) stack.push(s.charAt(i));
         else if (stack.isEmpty() || stack.pop() != table.get(s.charAt(i))) return false;
     }
-    
-    return true;
+
+    return stack.isEmpty();
 }
 ```
+
+반환을 `stack.isEmpty()` 로 하는 이유는, 유효한 문자열이라면 스택이 비어있어야 하기 때문이다.
+
+만약 문자열의 끝에 열림 기호가 추가로 있었다면 스택에 비어있지 않기 때문이다.

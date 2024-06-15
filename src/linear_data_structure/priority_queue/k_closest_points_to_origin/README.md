@@ -58,3 +58,14 @@ int[][] kClosest(int[][] points, int k) {
     return results;
 }
 ```
+
+
+현재 거리 계산 코드는 아래와 같다.
+
+`Math.sqrt(points[0] * points[0] + points[1] * points[1])`
+
+Math.sqrt 연산이 한 번 더 들어가게 되는데, 굳이? 라는 생각이 든다.
+
+우리는 정확한 값이 아니라, 값의 대소비교를 위한 것 뿐이다. 제곱의 합만 비교를 하면 된다. (어쩌면 두 수의 절대값의 합만으로도 값 비교가 가능할지도 모른다.)
+
+`distance = points[0] * points[0] + points[1] * points[1]` 로 값을 단순화하고, 자료형 또한 `long` 으로 활용할 수 있다.

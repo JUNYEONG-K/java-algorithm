@@ -73,4 +73,14 @@ public class CircularDeque {
     public boolean isFull() {
         return length == k;
     }
+
+    static class DoublyLinkedList {
+        DoublyLinkedList left;
+        DoublyLinkedList right;
+        int value;
+
+        public DoublyLinkedList(int value) {
+            this.value = value;
+        }
+    }
 }

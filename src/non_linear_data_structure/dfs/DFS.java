@@ -17,10 +17,10 @@ public class DFS {
 
     List<Integer> recursiveDFS(int v, List<Integer> discovered) {
         discovered.add(v);
+        System.out.println("v = " + v);
         for (Integer w : graph.get(v)) {
             if (!discovered.contains(w)) {
                 discovered = recursiveDFS(w, discovered);
-                System.out.println("discovered = " + discovered);
             }
         }
         return discovered;
@@ -35,6 +35,7 @@ public class DFS {
             v = stack.pop();
             if (!discovered.contains(v)) {
                 discovered.add(v);
+                System.out.println("v = " + v);
                 for (int w : graph.get(v)) stack.push(w);
             }
         }

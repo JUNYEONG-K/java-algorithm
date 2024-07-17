@@ -20,4 +20,10 @@ public class InsertionSortList {
         }
         return parent.next;
     }
+
+    public static void main(String[] args) {
+        ListNode nodes = new ListNode(5, new ListNode(2, new ListNode(1, new ListNode(3, null))));
+        ListNode node = insertionSort(nodes);
+        System.out.println("node = " + node);
+    }
 }
